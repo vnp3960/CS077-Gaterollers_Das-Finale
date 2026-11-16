@@ -10,7 +10,12 @@
       "settings",
       "branch",
       "inventory",
-      "access"
+      "access",
+      "external",
+      "modular",
+      "tests",
+      "release",
+      "sales"
     ],
     "engine": "Unity / C#",
     "gitEvidence": ".",
