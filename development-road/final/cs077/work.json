@@ -8,7 +8,8 @@
     "selected": [
       "save",
       "settings",
-      "branch"
+      "branch",
+      "inventory"
     ],
     "engine": "Unity / C#",
     "gitEvidence": ".",
