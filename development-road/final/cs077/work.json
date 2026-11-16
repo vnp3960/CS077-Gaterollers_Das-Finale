@@ -3,8 +3,8 @@
   "course": "CS077",
   "name": "Vinh Khang Nguyen Pham",
   "work": {
-    "project": "A story worth playing",
-    "path": "story",
+    "project": "Gateroller",
+    "path": "arcade",
     "selected": [
       "save"
     ],
@@ -12,7 +12,7 @@
     "gitEvidence": ".",
     "ai": ".",
     "aiVerify": ".",
-    "notes": "",
+    "notes": "Purpose: Learn and expand knowledge of C# via hands-on development\nObjective: Collaborate to",
     "plan": "",
     "availability": "",
     "service": "",
