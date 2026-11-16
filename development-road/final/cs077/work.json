@@ -17,7 +17,10 @@
       "tshirt",
       "project-mark",
       "ai-promo",
-      "quick-card"
+      "quick-card",
+      "modular",
+      "tests",
+      "trailer"
     ],
     "engine": "Unity / C#",
     "gitEvidence": ".",
