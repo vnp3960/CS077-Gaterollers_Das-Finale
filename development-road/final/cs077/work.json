@@ -12,10 +12,12 @@
       "inventory",
       "access",
       "external",
-      "modular",
-      "tests",
       "release",
-      "sales"
+      "sales",
+      "tshirt",
+      "project-mark",
+      "ai-promo",
+      "quick-card"
     ],
     "engine": "Unity / C#",
     "gitEvidence": ".",
