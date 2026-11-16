@@ -6,7 +6,9 @@
     "project": "Gaterollers",
     "path": "arcade",
     "selected": [
-      "save"
+      "save",
+      "settings",
+      "branch"
     ],
     "engine": "Unity / C#",
     "gitEvidence": ".",
