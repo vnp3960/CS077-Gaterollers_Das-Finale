@@ -19,8 +19,7 @@
       "ai-promo",
       "quick-card",
       "modular",
-      "tests",
-      "trailer"
+      "tests"
     ],
     "engine": "Unity / C#",
     "gitEvidence": ".",
