@@ -9,7 +9,8 @@
       "save",
       "settings",
       "branch",
-      "inventory"
+      "inventory",
+      "access"
     ],
     "engine": "Unity / C#",
     "gitEvidence": ".",
