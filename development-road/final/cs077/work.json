@@ -3,7 +3,7 @@
   "course": "CS077",
   "name": "Vinh Khang Nguyen Pham",
   "work": {
-    "project": "Gateroller",
+    "project": "Gaterollers",
     "path": "arcade",
     "selected": [
       "save"
@@ -12,7 +12,7 @@
     "gitEvidence": ".",
     "ai": ".",
     "aiVerify": ".",
-    "notes": "Purpose: Learn and expand knowledge of C# via hands-on project development as a team in real world environments\nObjective: Develop team collaboration skills, \nAudience:",
+    "notes": "Purpose: Learn and expand knowledge of C# via hands-on project development as a team in real world environments\n\nObjective: Develop team collaboration skills, deliver a quality product \n\nAudience: Team Gaterollers, as well as any fan to which the project may bring along the way\n\nCapabilities: C# development in Visual Studio and Unity\nDocumentations via Words, Notepad++, Google Docs\nPrototype design via MS Powerpoint/Google Slides\nLogic and User Decision Planning through Draw.io",
     "plan": "",
     "availability": "",
     "service": "",
