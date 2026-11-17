@@ -3,7 +3,7 @@ Gateroller — CS077 Project Presentation & Team README
 Project Information	Details
 Project	Pilot Cat
 Team	Gateroller (Gaterollin)
-Course	CS077 — Action 12A: Independence Day
+Course	CS077 — Finale
 Team Lead	Vinh Khang Nguyen Pham
 Coordinator	Pascual Ramirez
 Team Members	Vinh, Roman, Luisa, Kevin, Pascual
