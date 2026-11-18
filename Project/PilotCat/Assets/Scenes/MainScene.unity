@@ -288,7 +288,7 @@ MonoBehaviour:
   shootVolume: 0.228
   pickupSound: {fileID: 8300000, guid: 652b1905e593d7c46bc8606cf226ab99, type: 3}
   pickupVolume: 2.5
-  shieldVisual: {fileID: 0}
+  shieldVisual: {fileID: 139321232}
 --- !u!82 &13482371
 AudioSource:
   m_ObjectHideFlags: 0
