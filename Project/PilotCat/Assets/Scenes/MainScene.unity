@@ -1772,7 +1772,7 @@ MonoBehaviour:
   maxY: 5
   target: {fileID: 0}
   spread: 0.5
-  scaleWithScore: 1
+  scaleWithScore: 0
   hazardStartInterval: 1
   hazardFastestInterval: 0.4
   hazardIntervalDrop: 0.15
