@@ -120,7 +120,7 @@
       "returned": true,
       "goal": "Pilot Cat",
       "personal": "Story Development",
-      "questions": ""
+      "questions": "."
     },
     "evidence": {},
     "dailyDraft": {
@@ -216,7 +216,45 @@
         "evidence": "Run meaningful normal, boundary and failure tests. Show a defect the suite detects."
       }
     ],
-    "tasks": [],
+    "tasks": [
+      {
+        "id": "node-c61d837d-01be-41c9-aef4-ae5f905f9be5",
+        "title": "Build: core interaction",
+        "owner": "Vinh Khang Nguyen Pham",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "",
+        "nodeId": "c61d837d-01be-41c9-aef4-ae5f905f9be5",
+        "dependsOn": []
+      },
+      {
+        "id": "node-a8ea11a7-c709-4734-9c37-7f1644dc02ac",
+        "title": "Test: expected behavior",
+        "owner": "Vinh Khang Nguyen Pham",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "",
+        "nodeId": "a8ea11a7-c709-4734-9c37-7f1644dc02ac",
+        "dependsOn": [
+          "node-c61d837d-01be-41c9-aef4-ae5f905f9be5"
+        ]
+      },
+      {
+        "id": "node-c355e679-84ad-4b40-87f2-6a92299627d0",
+        "title": "Deliver: source + evidence",
+        "owner": "Vinh Khang Nguyen Pham",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "",
+        "nodeId": "c355e679-84ad-4b40-87f2-6a92299627d0",
+        "dependsOn": [
+          "node-a8ea11a7-c709-4734-9c37-7f1644dc02ac"
+        ]
+      }
+    ],
     "dailyNotes": [
       {
         "date": "2026-11-16",
