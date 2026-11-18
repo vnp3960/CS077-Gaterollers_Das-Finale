@@ -1,5 +1,6 @@
 {
   "schema": "final-road-work-v1",
+  "payloadVersion": 2,
   "course": "CS077",
   "name": "Vinh Khang Nguyen Pham",
   "work": {
@@ -21,13 +22,15 @@
       "tests"
     ],
     "engine": "Unity / C#",
+    "environmentTest": true,
     "gitEvidence": ".",
     "ai": ".",
     "aiVerify": ".",
     "notes": "Purpose: Learn and expand knowledge of C# via hands-on project development as a team in real world environments\n\nObjective: Develop team collaboration skills\nDeliver a quality product for team members' portfolio for future usage\nDemonstrate understanding and implementation of the ADD/P2P pipeline\nPassing the class CS-077 Intro to C#\n\nAudience: Team Gaterollers, as well as any fan to which the project may bring along the way\nCat lover, arcade flight enthusiast, cutesy indie games enjoyers.\n\nCapabilities: C# development in Visual Studio and Unity\nDocumentations via Words, Notepad++, Google Docs\nPrototype design via MS Powerpoint/Google Slides\nLogic and User Decision Planning through Draw.io",
-    "plan": "",
+    "plan": "Building from previous pipeline for refinement",
     "availability": "Discord: CeruleanRMG\nText/Call: 909-663-8116",
     "service": "",
+    "supportMode": "team",
     "role": "Team Lead",
     "board": {
       "nodes": [
@@ -113,14 +116,209 @@
       "strokes": []
     },
     "huddle": {
-      "stage": 1,
+      "stage": 2,
       "returned": true,
-      "goal": "",
-      "personal": "",
-      "questions": ""
+      "goal": "Pilot Cat",
+      "personal": "Story Development",
+      "questions": "."
     },
     "evidence": {},
-    "tasks": [],
-    "dailyNotes": []
-  }
+    "dailyDraft": {
+      "meeting": "CS077-2026-11-16",
+      "worked": "Create team and invite team members.\nWhiteboarding prototype and team.",
+      "next": "Complete world story building, dialogues/character development, etc.",
+      "blocker": "",
+      "evidence": "CS077-Gaterollers_Das-Finale/development-road/final/cs077/boards/IMG_20261116_124917_957.webp"
+    },
+    "requirements": [
+      {
+        "id": "core",
+        "code": "R01",
+        "title": "Working project foundation",
+        "evidence": "Working source and build (60); authored program logic (35); meaningful tests (20); run guide and evidence map (20); individual explanation (15)."
+      },
+      {
+        "id": "save",
+        "code": "R02",
+        "title": "Save and restore progress",
+        "evidence": "Save meaningful state; close and reopen the program; demonstrate correct restoration and invalid-file handling."
+      },
+      {
+        "id": "settings",
+        "code": "R04",
+        "title": "Settings that persist",
+        "evidence": "Provide useful settings, validate changes, save them and demonstrate restoration. This must extend beyond the same progress data."
+      },
+      {
+        "id": "branch",
+        "code": "R03",
+        "title": "Branching story or mission state",
+        "evidence": "Demonstrate at least two meaningful outcomes, their conditions and a state-transition test."
+      },
+      {
+        "id": "inventory",
+        "code": "R05",
+        "title": "Inventory or structured collection",
+        "evidence": "Add, remove and inspect structured items. Test limits and invalid actions."
+      },
+      {
+        "id": "release",
+        "code": "R19",
+        "title": "Public release on an approved platform",
+        "evidence": "Publish an accessible working build, versioned release notes and installation/run instructions on Steam or an approved equivalent. Platform acceptance alone earns no points."
+      },
+      {
+        "id": "sales",
+        "code": "R20",
+        "title": "Front-facing HTML product page",
+        "evidence": "Create an original responsive product page with screenshots, accurate features, credits, accessibility and a working release/download link."
+      },
+      {
+        "id": "tshirt",
+        "code": "R24",
+        "title": "Project T-shirt design + mockup",
+        "evidence": "Create an original graphic connected to your project in Canva or another design tool. Submit the editable source or export, a readable PNG and a shirt mockup, plus a short design explanation. No purchase or paid account is required."
+      },
+      {
+        "id": "project-mark",
+        "code": "R26",
+        "title": "Project logo or title treatment",
+        "evidence": "Design a project-specific logo or title mark. Include the editable source, a clean export, one in-context use and a short explanation. Use a separate artifact from the T-shirt graphic."
+      },
+      {
+        "id": "ai-promo",
+        "code": "R25",
+        "title": "AI-assisted promotional illustration",
+        "evidence": "Create a project-specific concept or promotional render. Save the tool name, prompt, selected output, your revisions and credits. Label concept artwork clearly; it is not evidence of working gameplay."
+      },
+      {
+        "id": "quick-card",
+        "code": "R27",
+        "title": "Illustrated player or user quick start",
+        "evidence": "Create a one-page illustrated controls or getting-started card for your actual project. Include the source/export and document one person trying its instructions. This is distinct from the required run guide."
+      },
+      {
+        "id": "external",
+        "code": "R13",
+        "title": "External playtest and revision",
+        "evidence": "Use consented feedback from at least three testers; document problems, fixes and retest evidence."
+      },
+      {
+        "id": "modular",
+        "code": "R09",
+        "title": "Modular architecture",
+        "evidence": "Show a module/class diagram, clear responsibilities and a change made without rewriting unrelated systems."
+      },
+      {
+        "id": "tests",
+        "code": "R10",
+        "title": "Automated regression tests",
+        "evidence": "Run meaningful normal, boundary and failure tests. Show a defect the suite detects."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "node-a8ea11a7-c709-4734-9c37-7f1644dc02ac",
+        "title": "Storyboard",
+        "owner": "Vinh Khang Nguyen Pham",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "Understanding of the world's story",
+        "nodeId": "a8ea11a7-c709-4734-9c37-7f1644dc02ac",
+        "dependsOn": []
+      },
+      {
+        "id": "node-c355e679-84ad-4b40-87f2-6a92299627d0",
+        "title": "Repos and task management",
+        "owner": "Pascual Ramirez",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "Repo organization and team task list off platform",
+        "nodeId": "c355e679-84ad-4b40-87f2-6a92299627d0",
+        "dependsOn": [
+          "node-a8ea11a7-c709-4734-9c37-7f1644dc02ac"
+        ]
+      },
+      {
+        "id": "609b996b-d62c-47bd-8a88-a56e209e4b85",
+        "title": "Project core/foundation",
+        "owner": "Roman Calles",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "basic game mechanics",
+        "nodeId": "",
+        "dependsOn": []
+      },
+      {
+        "id": "754c8ed2-a0b2-47c6-9eb6-abcc0448e707",
+        "title": "Project core/foundation",
+        "owner": "Luisa Ramirez",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "basic game mechanics",
+        "nodeId": "",
+        "dependsOn": []
+      },
+      {
+        "id": "a99a6e50-742e-4b02-8737-c295d1377d27",
+        "title": "",
+        "owner": "Vinh Khang Nguyen Pham",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "",
+        "nodeId": "",
+        "dependsOn": []
+      }
+    ],
+    "dailyNotes": [
+      {
+        "date": "2026-11-16",
+        "revision": 1,
+        "worked": "Create team and invite team members.\nWhiteboarding prototype and team.",
+        "next": "Complete world story building, dialogues/character development, etc.",
+        "blocker": "",
+        "evidence": "CS077-Gaterollers_Das-Finale/development-road/final/cs077/boards/IMG_20261116_124917_957.webp",
+        "tasks": []
+      }
+    ]
+  },
+  "team": {
+    "name": "Gaterollers",
+    "mode": "team",
+    "project": "Gaterollers",
+    "projectRepo": "",
+    "members": [
+      {
+        "name": "Vinh Khang Nguyen Pham",
+        "role": "Team Lead"
+      },
+      {
+        "name": "Roman Calles",
+        "role": "Developer"
+      },
+      {
+        "name": "Luisa Ramirez",
+        "role": "Developer"
+      },
+      {
+        "name": "Kevin F",
+        "role": "Media director"
+      },
+      {
+        "name": "Pascual Ramirez",
+        "role": "Coordinator"
+      }
+    ]
+  },
+  "sharedPlan": {
+    "goal": "",
+    "plan": "",
+    "tasks": []
+  },
+  "completedReports": []
 }
