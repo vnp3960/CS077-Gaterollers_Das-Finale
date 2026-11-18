@@ -243,19 +243,30 @@
       },
       {
         "id": "609b996b-d62c-47bd-8a88-a56e209e4b85",
-        "title": "",
+        "title": "Project core/foundation",
         "owner": "Roman Calles",
         "due": "",
         "done": false,
         "result": "",
-        "description": "",
+        "description": "basic game mechanics",
         "nodeId": "",
         "dependsOn": []
       },
       {
         "id": "754c8ed2-a0b2-47c6-9eb6-abcc0448e707",
-        "title": "",
+        "title": "Project core/foundation",
         "owner": "Luisa Ramirez",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "basic game mechanics",
+        "nodeId": "",
+        "dependsOn": []
+      },
+      {
+        "id": "a99a6e50-742e-4b02-8737-c295d1377d27",
+        "title": "",
+        "owner": "Vinh Khang Nguyen Pham",
         "due": "",
         "done": false,
         "result": "",
