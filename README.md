@@ -7,6 +7,7 @@ Course	CS077 — Finale
 Team Lead	Vinh Khang Nguyen Pham
 Coordinator	Pascual Ramirez
 Team Members	Vinh, Roman, Luisa, Kevin, Pascual
+
 🐾 1. Game Overview & Backstory
 
 Pilot Cat is an original side-scroller game developed by the Gateroller team. The concept originated during a collaborative 10-minute whiteboard brainstorming session in Action 11B.
@@ -17,7 +18,7 @@ The Story
 
 Duke, also known as Pilot Cat, is one of the most infamous felines in Catlandia. Under the tutelage of the legendary ace "Trigger" from Strangereal, Duke became an expert aviator.
 
-He operates as an international Cat Nip smuggler, flying across the Catlantic into Catmerica.
+He operates as an international Cat Nip smuggler, flying across the Catlantic into K-9topia.
 
 Despite being relentlessly pursued by the Watch Dogs Order and the International Cat Police, Duke stays true to his feline roots.
 
@@ -29,16 +30,19 @@ Duke's Three Favorite Things
 Secret Identity: Despite being branded a criminal, Duke anonymously funds local orphanages across Settaria, making him a hidden role model to the youth he supports.
 
 Fictional World Reference
-Name	Category	Description
-Settaria	World	The fictional world containing all continents and oceans.
-Catlandia	Continent	Duke's home continent and primary base.
-Catlantic	Environment	The vast ocean Duke navigates.
-Viridescent Claw	Vehicle	Duke's custom vintage biplane.
-Watch Dogs Order	Enemy	International police authority pursuing Duke.
-Cat Nip	Collectible	The valuable resource central to the story.
-Catmerica	Destination	Territory Duke flies into during his operations.
-International Cat Police	Enemy Faction	Another authority pursuing Duke.
-Trigger	Character	Legendary ace who trained Duke.
+Name				Category			Description
+Settaria			World				The fictional world containing all continents and oceans.
+Duke				Player				Cat that flies
+Catlandia			Continent			Duke's home continent and primary base.
+Catlantic			Environment			The vast ocean Duke navigates.
+Golden Claw			Object/Vehicle		Duke's custom vintage biplane.
+Watch Dogs Order	Enemy				International police authority pursuing Duke.
+Cat Nip				Collectible			The valuable resource central to the story.
+K9-topia			World				Territory Duke flies into during his operations.
+Mason				Support				Childhood friend of Duke from the orphanage. Supports Duke by providing intel from the Watch Dogs as well as companion on the airwave(radio)
+Rouge				Main Antagonist		Childhood friend of Duke from the orphanage. The one who tips off the Watch Dogs, and is the final boss.
+Trigger				Support				Legendary ace who trained Duke.
+
 ✈️ 2. Gameplay & Project Vision
 
 Pilot Cat is designed as a side-scrolling aircraft game where players control Duke and navigate through the Catlantic.
@@ -57,7 +61,7 @@ Mission Progression	Expand gameplay through objectives and mission states.
 Main Characters & Assets
 Element	Purpose
 Duke / Pilot Cat	Main playable character.
-Viridescent Claw	Player aircraft.
+Golden Claw	Player aircraft.
 Watch Dogs Order	Main opposing faction.
 Cat Nip	Collectible and gameplay resource.
 Trigger	Duke's legendary flight instructor.
@@ -66,12 +70,12 @@ Trigger	Duke's legendary flight instructor.
 The Gateroller team collaboratively developed Pilot Cat through brainstorming, game design, Unity development, documentation, and testing.
 
 Team Roster
-Team Member	Position	Individual Contributions
+Team Member				Position	Individual Contributions
 Vinh Khang Nguyen Pham	Team Lead	Directed the project, coordinated technical development, and contributed to Unity gameplay implementation and integration.
-Roman Calles	Developer	Contributed to gameplay programming, C# implementation, and functional testing.
-Luisa Ramirez	Developer	Contributed to the original story, character development, game design, and project documentation.
-Kevin F	Media Director	Responsible for visual presentation, promotional materials, graphics, and project media.
-Pascual Ramirez	Coordinator	Organized team communication, task delegation, documentation, repository structure, and submission evidence.
+Roman Calles			Developer	Contributed to gameplay programming, C# implementation, and functional testing.
+Luisa Ramirez			Developer	Contributed to the original story, character development, game design, and project documentation.
+Kevin F	Media 			Media & PR	Responsible for visual presentation, promotional materials, graphics, and project media.
+Pascual Ramirez			Coordinator	Organized team communication, task delegation, documentation, repository structure, and submission evidence.
 
 Individual contributions will be updated as team members complete their assigned requirements.
 
@@ -96,8 +100,8 @@ C# Source Code	Demonstrate authored program logic.
 Game Design Document	Document story, gameplay, and design decisions.
 Testing Results	Demonstrate functionality and identify issues.
 Individual Contributions	Show each member's completed work.
-📋 5. Final Requirements & Team Task Assignments
 
+📋 5. Final Requirements & Team Task Assignments
 The following table contains all remaining graded requirements. Each task has a designated owner field for the team to fill in.
 
 Master Task Assignment Tracker
@@ -143,6 +147,7 @@ Technical Verification	Verify technical claims against appropriate documentation
 Code Testing	Test generated or AI-assisted code in Unity.
 Review Decisions	Document whether suggestions were kept, modified, or rejected.
 Supporting Evidence	Preserve AI records, Unity screenshots, source code, and testing results.
+
 🚀 7. Final Project Goals
 
 The Gateroller team aims to turn Pilot Cat into a complete, playable, documented, and publicly accessible game.
