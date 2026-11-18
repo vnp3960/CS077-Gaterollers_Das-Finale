@@ -65,6 +65,7 @@ Golden Claw	Player aircraft.
 Watch Dogs Order	Main opposing faction.
 Cat Nip	Collectible and gameplay resource.
 Trigger	Duke's legendary flight instructor.
+
 👥 3. Gateroller Team & Individual Contributions
 
 The Gateroller team collaboratively developed Pilot Cat through brainstorming, game design, Unity development, documentation, and testing.
