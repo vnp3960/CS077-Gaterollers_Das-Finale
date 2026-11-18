@@ -42,4 +42,24 @@ public class CargoHoldTests
         Assert.IsFalse(hold.TryAdd(ItemType.CatNip, -5));
         Assert.AreEqual(0, hold.Count(ItemType.CatNip));
     }
+
+    // Boundary: a shield needs all 3 fish; 2 isn't enough
+    [Test]
+    public void UseShield_WithTwoFish_IsRefused_NothingChanges()
+    {
+        var hold = new CargoHold();
+        hold.TryAdd(ItemType.FishSnack, 2);
+        Assert.IsFalse(hold.TryRemove(ItemType.FishSnack, 3));
+        Assert.AreEqual(2, hold.Count(ItemType.FishSnack));
+    }
+
+    // Normal: with 3 fish, using the shield empties the fish hold
+    [Test]
+    public void UseShield_WithThreeFish_UsesAllThree()
+    {
+        var hold = new CargoHold();
+        hold.TryAdd(ItemType.FishSnack, 3);
+        Assert.IsTrue(hold.TryRemove(ItemType.FishSnack, 3));
+        Assert.AreEqual(0, hold.Count(ItemType.FishSnack));
+    }
 }

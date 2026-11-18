@@ -62,7 +62,15 @@ public class PlayerMover : MonoBehaviour
     void EatFish()
     {
         if (shieldUp) { Say("Shield already up!"); return; }
-        if (!ScoreKeeper.cargo.TryRemove(ItemType.FishSnack)) { Say("No fish!"); return; }
+
+        // A shield costs a full fish hold (3 by default)
+        int needed = ScoreKeeper.cargo.Capacity(ItemType.FishSnack);
+        int have = ScoreKeeper.cargo.Count(ItemType.FishSnack);
+        if (!ScoreKeeper.cargo.TryRemove(ItemType.FishSnack, needed))
+        {
+            Say("Need " + needed + " fish! (" + have + "/" + needed + ")");
+            return;
+        }
         SetShield(true);
         Say("Shield up!");
     }
@@ -101,9 +109,10 @@ public class PlayerMover : MonoBehaviour
         }
         else if (other.CompareTag("FishSnack"))
         {
-            if (!ScoreKeeper.cargo.TryAdd(ItemType.FishSnack)) { Say("Fish hold full!"); return; }
+            if (!ScoreKeeper.cargo.TryAdd(ItemType.FishSnack)) { Say("Fish hold full! Press E for a shield"); return; }
             PlayPickup();
             Destroy(other.gameObject);
+            if (ScoreKeeper.cargo.IsFull(ItemType.FishSnack)) Say("Shield ready! Press E");
         }
         else if (other.CompareTag("Hazard"))
         {
