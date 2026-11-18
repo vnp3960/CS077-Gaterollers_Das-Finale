@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilot Cat — Official Game Page | Gateroller</title>
+  <meta name="description" content="Soar across the Catlantic as Duke in Pilot Cat, an original side-scrolling aerial adventure by Team Gateroller." />
+  <style>
+    :root {
+      --bg-sky: #0b192c;
+      --bg-deep: #07101e;
+      --card-bg: #112540;
+      --card-border: #1e3e66;
+      --accent-gold: #f6b93b;
+      --accent-emerald: #2ed573;
+      --accent-coral: #ff6b6b;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --focus-ring: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Accessibility Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -48px;
+      left: 16px;
+      background: var(--accent-gold);
+      color: #0b192c;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 6px;
+      z-index: 1000;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus-ring);
+      outline-offset: 3px;
+    }
+
+    /* Navigation */
+    header {
+      background: rgba(11, 25, 44, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: radial-gradient(circle at top right, #183a66 0%, var(--bg-sky) 55%, var(--bg-deep) 100%);
+      padding: 80px 24px 72px;
+      text-align: center;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .hero-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(46, 213, 115, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(46, 213, 115, 0.4);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      letter-spacing: 0.4px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 3.75rem);
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 32px;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent-gold);
+      color: #0b192c;
+      font-weight: 800;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.15s, background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #ffd166;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--card-bg);
+      color: var(--text-main);
+      border: 1px solid var(--card-border);
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-gold);
+    }
+
+    /* Sections */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    section {
+      margin-bottom: 68px;
+    }
+
+    h2 {
+      font-size: 1.85rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+      border-left: 4px solid var(--accent-gold);
+      padding-left: 14px;
+    }
+
+    .section-lead {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      max-width: 740px;
+    }
+
+    /* Cards & Grids */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--accent-gold);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    /* Story Callout */
+    .story-box {
+      background: linear-gradient(135deg, #112540 0%, #153154 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 32px;
+    }
+
+    .story-box p {
+      margin-bottom: 14px;
+      color: #e2e8f0;
+    }
+
+    .secret-note {
+      background: rgba(246, 185, 59, 0.1);
+      border-left: 4px solid var(--accent-gold);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 18px;
+      font-size: 0.95rem;
+    }
+
+    /* Screenshots Placeholder Grid */
+    .screenshot-slot {
+      background: #0d1d33;
+      border: 2px dashed #2b5282;
+      border-radius: 12px;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: var(--text-muted);
+    }
+
+    .screenshot-slot strong {
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    /* Controls & Accessibility Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+    }
+
+    th, td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    th {
+      background: #0d1d33;
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    kbd {
+      background: #07101e;
+      border: 1px solid #335c8d;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: #ffffff;
+    }
+
+    /* Footer */
+    footer {
+      background: #050b14;
+      border-top: 1px solid var(--card-border);
+      padding: 36px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer strong {
+      color: var(--text-main);
+    }
+    
+    /* New Credits Styling */
+    .credits-category {
+      margin-bottom: 32px;
+    }
+    
+    .credits-category h3 {
+      color: var(--text-main);
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--card-border);
+      padding-bottom: 6px;
+    }
+    
+    .credits-list {
+      list-style: none;
+      padding-left: 10px;
+    }
+    
+    .credits-list li {
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-size: 0.96rem;
+    }
+    
+    .credits-list li strong {
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    /* Updated Table for Screenshot section alignment */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-top: 15px;
+        border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">🐈 PILOT CAT</a>
+      <nav aria-label="Primary Navigation">
+        <ul>
+          <li><a href="#story">Story</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#screenshots">Media</a></li>
+          <li><a href="#accessibility">Controls &amp; Accessibility</a></li>
+          <li><a href="#credits">Credits</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="badge">CS077 Finale • A Gateroller Original</span>
+      <h1>Pilot Cat: Skies of Settaria</h1>
+      <p>Take the controls of the <em>Viridescent Claw</em> as Duke—Catlandia's most notorious airborne smuggler—dodging the Watch Dogs Order across the vast Catlantic.</p>
+      <div class="cta-group">
+        <!-- Replace #download-link with your actual itch.io, Steam, or GitHub Release URL -->
+        <a href="#download" class="btn-primary">Download &amp; Play (v1.0)</a>
+        <a href="#features" class="btn-secondary">Explore Features</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+      <!-- Story Section -->
+      <section id="story" aria-labelledby="story-heading">
+          <h2 id="story-heading">The Story of Duke</h2>
+          <p class="section-lead">Born from a collaborative design session in Settaria, Pilot Cat blends classic side-scrolling arcade flight with high-stakes smuggling runs.</p>
+          <div class="story-box">
+              <p><strong>Duke</strong>, known across the skies as <strong>Pilot Cat</strong>, trained under the legendary ace <strong>"Trigger"</strong> from Strangereal. Operating out of Catlandia, Duke pilots his custom vintage biplane—the <em>Viridescent Claw</em>—across the treacherous Catlantic into Catmerica to deliver precious <strong>Cat Nip</strong>.</p>
+              <p>Relentlessly pursued by the <strong>Watch Dogs Order</strong> and the <strong>International Cat Police</strong>, Duke relies on razor-sharp aerial maneuvers, quick reflexes, and sheer feline grit to survive every run.</p>
+              <div class="secret-note">
+                  <strong>Secret Identity:</strong> Although branded an outlaw by international authorities, Duke anonymously funds local orphanages across Settaria with every successful run.
+              </div>
+          </div>
+      </section>
+
+      <!-- Gameplay Features -->
+      <section id="features" aria-labelledby="features-heading">
+          <h2 id="features-heading">Gameplay Features</h2>
+          <p class="section-lead">Built in Unity with responsive multi-axis flight physics and dynamic hazards.</p>
+          <div class="grid-3">
+              <article class="card">
+                  <h3>✈️ Multi-Axis Flight &amp; Banking</h3>
+                  <p>Smooth horizontal and vertical movement paired with dynamic aircraft tilt and continuous propeller animation.</p>
+              </article>
+              <article class="card">
+                  <h3>💥 Aerial Combat &amp; Hazards</h3>
+                  <p>Fire projectiles with custom particle effects to fend off Watch Dogs Order patrols and incoming obstacles.</p>
+              </article>
+              <article class="card">
+                  <h3>🌿 Cat Nip Runs &amp; Missions</h3>
+                  <p>Collect Cat Nip across scrolling ocean and sky environments while progressing through branching mission states.</p>
+              </article>
+              <article class="card">
+                  <h3>💾 Persistent Saves &amp; Settings</h3>
+                  <p>Save your run progress and customize audio/control settings that persist safely between play sessions.</p>
+              </article>
+              <article class="card">
+                  <h3>🎒 Structured Inventory</h3>
+                  <p>Manage collected Cat Nip and mission items with clear capacity rules and item inspection.</p>
+              </article>
+              <article class="card">
+                  <h3>🌊 Living World of Settaria</h3>
+                  <p>Multi-layered parallax scrolling skies, ocean waves, and hand-crafted world lore.</p>
+              </article>
+          </div>
+      </section>
+
+      <!-- Screenshots Section -->
+      <section id="screenshots" aria-labelledby="media-heading">
+          <h2 id="media-heading">Screenshots &amp; Gameplay</h2>
+          <div class="grid-2" style="margin-top: 24px; gap: 32px;">
+              <div role="img" aria-label="Pilot Cat flight gameplay screenshot" style="background: transparent; border: none; border-radius: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 0; box-sizing: border-box; height: auto;">
+                  <strong style="color: var(--text-main); margin-bottom: 12px; font-weight: 700; font-size: 1.1rem;">Screenshot 1: Crossing the Catlantic</strong>
+                  <img src="CS077_PROGRAM_RUNNING_1.jpg" alt="Pilot Cat crossing the sky with balloons and an airplane" style="width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+              </div>
+              <div role="img" aria-label="Watch Dogs Order encounter screenshot" style="background: transparent; border: none; border-radius: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 0; box-sizing: border-box; height: auto;">
+                  <strong style="color: var(--text-main); margin-bottom: 12px; font-weight: 700; font-size: 1.1rem;">Screenshot 2: Evading the Watch Dogs Order</strong>
+                  <img src="CS077_PROGRAM_RUNNING_2.jpg" alt="Pilot Cat shot down game over screen showing score and stats" style="width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+              </div>
+          </div>
+      </section>
+      <!-- Controls & Accessibility -->
+      <section id="accessibility" aria-labelledby="a11y-heading">
+          <h2 id="a11y-heading">Controls &amp; Accessibility</h2>
+          <p class="section-lead">Pilot Cat is designed to be straightforward to pick up and readable across screen sizes.</p>
+          <div class="grid-2">
+              <div>
+                  <table>
+                      <thead>
+                          <tr>
+                              <th scope="col">Action</th>
+                              <th scope="col">Input</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>Move Aircraft (Up / Down / Left / Right)</td>
+                              <td><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> or <kbd>Arrow Keys</kbd></td>
+                          </tr>
+                          <tr>
+                              <td>Fire Projectiles</td>
+                              <td><kbd>Spacebar</kbd></td>
+                          </tr>
+                          <tr>
+                              <td>Pause / Settings</td>
+                              <td><kbd>Esc</kbd></td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <div class="card">
+                  <h3>♿ Accessibility Notes</h3>
+                  <p>
+                      • <strong>Keyboard-Only Playable:</strong> Full flight, combat, and menu navigation supported without requiring rapid mouse precision.<br><br>
+                      • <strong>High-Contrast UI &amp; Web Page:</strong> Built with semantic HTML, keyboard skip-links, clear focus outlines, and readable contrast ratios.<br><br>
+                      • <strong>Persistent Audio &amp; Control Settings:</strong> Volume and gameplay preferences save automatically across sessions.
+                  </p>
+              </div>
+          </div>
+      </section>
+
+      <!-- Download / Release Section (Updated) -->
+      <section id="download" aria-labelledby="download-heading">
+          <h2 id="download-heading">Project Status &amp; Source Code</h2>
+          <div class="card">
+              <h3>🚧 Currently In Development (Pre-Release)</h3>
+              <p style="margin-bottom: 16px;">We are still polishing <em>PilotCat</em>! While we finalize the game, you can view our progress, track issues, or examine the source code on our team repository.</p>
+              <!-- HINT: Change href="https://github.com/vnp3960/CS077-Gaterollers_Das-Finale" to your actual team repository URL -->
+              <a href="https://github.com/vnp3960/CS077-Gaterollers_Das-Finale" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="display:inline-block;">View Team Repository on GitHub ↗</a>
+          </div>
+      </section>
+
+      <!-- Team Credits -->
+      <section id="credits" aria-labelledby="credits-heading">
+          <h2 id="credits-heading">Team Gateroller Credits</h2>
+          <p class="section-lead">Developed for CS077 — Finale by Team Gateroller (Gaterollin).</p>
+          <table>
+              <thead>
+                  <tr>
+                      <th scope="col">Team Member</th>
+                      <th scope="col">Role</th>
+                      <th scope="col">Contributions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td><strong>Vinh Khang Nguyen Pham</strong></td>
+                      <td>Team Lead</td>
+                      <td>Project direction, technical coordination, Unity gameplay implementation &amp; integration</td>
+                  </tr>
+                  <tr>
+                      <td><strong>Roman Calles</strong></td>
+                      <td>Developer</td>
+                      <td>Gameplay programming, C# implementation, and functional testing</td>
+                  </tr>
+                  <tr>
+                      <td><strong>Luisa Ramirez</strong></td>
+                      <td>Developer</td>
+                      <td>Original story, character &amp; world design, and project documentation</td>
+                  </tr>
+                  <tr>
+                      <td><strong>Kevin F</strong></td>
+                      <td>Media Director</td>
+                      <td>Visual presentation, promotional graphics, and project media</td>
+                  </tr>
+                  <tr>
+                      <td><strong>Pascual Ramirez</strong></td>
+                      <td>Coordinator</td>
+                      <td>Team communication, task delegation, repository structure, and submission evidence</td>
+                  </tr>
+              </tbody>
+          </table>
+      </section>
+
+      <!-- Additional Tool Credits Section -->
+      <section id="tool-credits" aria-labelledby="tool-credits-heading" style="margin-bottom: 80px;">
+          <h2 id="tool-credits-heading" style="font-size: 1.85rem; color: #ffffff; border-left: 4px solid #f6b93b; padding-left: 14px; margin-bottom: 12px;">Development Tools &amp; Acknowledgments</h2>
+          <p class="section-lead" style="color: #94a3b8; margin-bottom: 32px; max-width: 740px;">This project was developed with the help of the following software, tools, and services.</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 32px;">
+
+              <!-- Development Environment Card -->
+              <div style="background: #112540; border: 1px solid #1e3e66; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); transition: transform 0.2s, border-color 0.2s;">
+                  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid #1e3e66; padding-bottom: 12px;">
+                      <span style="font-size: 1.5rem;">💻</span>
+                      <h3 style="font-size: 1.2rem; color: #f6b93b; margin: 0;">Development Environment</h3>
+                  </div>
+                  <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                      <li>
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                              <strong style="color: #ffffff; font-size: 0.95rem;">Microsoft Windows</strong>
+                              <span style="background: rgba(246, 185, 59, 0.1); color: #f6b93b; border: 1px solid rgba(246, 185, 59, 0.3); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase;">OS</span>
+                          </div>
+                          <p style="color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.4;">Operating system and development environment.</p>
+                      </li>
+                      <li>
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                              <strong style="color: #ffffff; font-size: 0.95rem;">Visual Studio 2026</strong>
+                              <span style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase;">IDE</span>
+                          </div>
+                          <p style="color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.4;">Integrated Development Environment used for coding, debugging, and project development.</p>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- Productivity & Documentation Card -->
+              <div style="background: #112540; border: 1px solid #1e3e66; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); transition: transform 0.2s, border-color 0.2s;">
+                  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid #1e3e66; padding-bottom: 12px;">
+                      <span style="font-size: 1.5rem;">📝</span>
+                      <h3 style="font-size: 1.2rem; color: #f6b93b; margin: 0;">Productivity &amp; Documentation</h3>
+                  </div>
+                  <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                      <li>
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                              <strong style="color: #ffffff; font-size: 0.95rem;">Microsoft Word</strong>
+                              <span style="background: rgba(46, 213, 115, 0.1); color: #2ed573; border: 1px solid rgba(46, 213, 115, 0.3); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase;">Doc</span>
+                          </div>
+                          <p style="color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.4;">Document creation and text editing.</p>
+                      </li>
+                      <li>
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                              <strong style="color: #ffffff; font-size: 0.95rem;">Microsoft PowerPoint</strong>
+                              <span style="background: rgba(255, 107, 107, 0.1); color: #ff6b6b; border: 1px solid rgba(255, 107, 107, 0.3); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase;">Slides</span>
+                          </div>
+                          <p style="color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.4;">Presentation creation and visual planning.</p>
+                      </li>
+                      <li>
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                              <strong style="color: #ffffff; font-size: 0.95rem;">PDF Format</strong>
+                              <span style="background: rgba(226, 232, 240, 0.1); color: #e2e8f0; border: 1px solid rgba(226, 232, 240, 0.3); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase;">File</span>
+                          </div>
+                          <p style="color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.4;">Document format used for reading, sharing, and referencing project materials.</p>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- 3D Modeling & Game Development Card -->
+              <div style="background: #112540; border: 1px solid #1e3e66; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); transition: transform 0.2s, border-color 0.2s;">
+                  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid #1e3e66; padding-bottom: 12px;">
+                      <span style="font-size: 1.5rem;">🎮</span>
+                      <h3 style="font-size: 1.2rem; color: #f6b93b; margin: 0;">3D Modeling &amp; Dev</h3>
+                  </div>
+                  <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                      <li>
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                              <strong style="color: #ffffff; font-size: 0.95rem;">Unity</strong>
+                              <span style="background: rgba(246, 185, 59, 0.1); color: #f6b93b; border: 1px solid rgba(246, 185, 59, 0.3); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase;">Engine</span>
+                          </div>
+                          <p style="color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.4;">Game engine used for project development and implementation.</p>
+                      </li>
+                      <li>
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                              <strong style="color: #ffffff; font-size: 0.95rem;">Blender</strong>
+                              <span style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase;">3D Art</span>
+                          </div>
+                          <p style="color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.4;">3D modeling, asset creation, and visual production.</p>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- Artificial Intelligence & Assistance Card -->
+              <div style="background: #112540; border: 1px solid #1e3e66; border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); transition: transform 0.2s, border-color 0.2s;">
+                  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid #1e3e66; padding-bottom: 12px;">
+                      <span style="font-size: 1.5rem;">🤖</span>
+                      <h3 style="font-size: 1.2rem; color: #f6b93b; margin: 0;">AI &amp; Assistance</h3>
+                  </div>
+                  <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+                      <li>
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                              <strong style="color: #ffffff; font-size: 0.95rem;">ChatGPT (OpenAI)</strong>
+                              <span style="background: rgba(46, 213, 115, 0.1); color: #2ed573; border: 1px solid rgba(46, 213, 115, 0.3); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase;">AI Guide</span>
+                          </div>
+                          <p style="color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.4;">Used for brainstorming, explanations, troubleshooting, research assistance, and development guidance.</p>
+                      </li>
+                      <li>
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                              <strong style="color: #ffffff; font-size: 0.95rem;">Claude (Anthropic)</strong>
+                              <span style="background: rgba(255, 107, 107, 0.1); color: #ff6b6b; border: 1px solid rgba(255, 107, 107, 0.3); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase;">AI Code</span>
+                          </div>
+                          <p style="color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.4;">Used for writing assistance, brainstorming, problem-solving, and development support.</p>
+                      </li>
+                      <li>
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                              <strong style="color: #ffffff; font-size: 0.95rem;">Gemini (Google)</strong>
+                              <span style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; text-transform: uppercase;">AI Assist</span>
+                          </div>
+                          <p style="color: #94a3b8; font-size: 0.85rem; margin: 0; line-height: 1.4;">Used for research assistance, brainstorming, explanations, and general development support.</p>
+                      </li>
+                  </ul>
+              </div>
+
+          </div>
+
+          <!-- Full-Width Acknowledgment Card -->
+          <div style="background: linear-gradient(135deg, #112540 0%, #0d1d33 100%); border: 1px solid rgba(246, 185, 59, 0.4); border-radius: 12px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border-left: 4px solid #f6b93b;">
+              <h3 style="font-size: 1.15rem; color: #f6b93b; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">🤝 Acknowledgments</h3>
+              <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.5; margin-bottom: 10px;">Special thanks to the developers and organizations behind these tools and technologies for making them available and supporting the development of this project.</p>
+              <p style="color: #94a3b8; font-size: 0.8rem; font-style: italic; margin: 0;">All software, services, and trademarks belong to their respective owners.</p>
+          </div>
+      </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Pilot Cat</strong> — A Gateroller Original | CS077 Finale Project</p>
+    <p style="margin-top: 6px;">"Meow!" 🐈✈️</p>
+  </footer>
+</body>
+</html>
