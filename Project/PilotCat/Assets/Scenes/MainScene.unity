@@ -1642,6 +1642,62 @@ Transform:
   - {fileID: 1234027384}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1038140655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038140657}
+  - component: {fileID: 1038140656}
+  m_Layer: 0
+  m_Name: FishSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1038140656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038140655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30f3cd6dcade2540b8d47da2eab4805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  prefab: {fileID: 8445056022737733608, guid: ff86d3b9bde242e49818508f02660aaa, type: 3}
+  interval: 1.5
+  spawnX: 12
+  minY: -5
+  maxY: 5
+  target: {fileID: 0}
+  spread: 0.5
+  scaleWithScore: 1
+  hazardStartInterval: 1
+  hazardFastestInterval: 0.4
+  hazardIntervalDrop: 0.15
+  speedBoostPerLevel: 1.5
+--- !u!4 &1038140657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038140655}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.66049, y: -0, z: -6.61673}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1234027383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2588,6 +2644,7 @@ SceneRoots:
   - {fileID: 1721315920}
   - {fileID: 13482369}
   - {fileID: 280023387}
+  - {fileID: 1038140657}
   - {fileID: 2125294692}
   - {fileID: 2009142688}
   - {fileID: 712193740}
