@@ -218,41 +218,50 @@
     ],
     "tasks": [
       {
-        "id": "node-c61d837d-01be-41c9-aef4-ae5f905f9be5",
-        "title": "Build: core interaction",
+        "id": "node-a8ea11a7-c709-4734-9c37-7f1644dc02ac",
+        "title": "Storyboard",
         "owner": "Vinh Khang Nguyen Pham",
         "due": "",
         "done": false,
         "result": "",
-        "description": "",
-        "nodeId": "c61d837d-01be-41c9-aef4-ae5f905f9be5",
+        "description": "Understanding of the world's story",
+        "nodeId": "a8ea11a7-c709-4734-9c37-7f1644dc02ac",
         "dependsOn": []
       },
       {
-        "id": "node-a8ea11a7-c709-4734-9c37-7f1644dc02ac",
-        "title": "Test: expected behavior",
-        "owner": "Vinh Khang Nguyen Pham",
-        "due": "",
-        "done": false,
-        "result": "",
-        "description": "",
-        "nodeId": "a8ea11a7-c709-4734-9c37-7f1644dc02ac",
-        "dependsOn": [
-          "node-c61d837d-01be-41c9-aef4-ae5f905f9be5"
-        ]
-      },
-      {
         "id": "node-c355e679-84ad-4b40-87f2-6a92299627d0",
-        "title": "Deliver: source + evidence",
-        "owner": "Vinh Khang Nguyen Pham",
+        "title": "Repos and task management",
+        "owner": "Pascual Ramirez",
         "due": "",
         "done": false,
         "result": "",
-        "description": "",
+        "description": "Repo organization and team task list off platform",
         "nodeId": "c355e679-84ad-4b40-87f2-6a92299627d0",
         "dependsOn": [
           "node-a8ea11a7-c709-4734-9c37-7f1644dc02ac"
         ]
+      },
+      {
+        "id": "609b996b-d62c-47bd-8a88-a56e209e4b85",
+        "title": "",
+        "owner": "Roman Calles",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "",
+        "nodeId": "",
+        "dependsOn": []
+      },
+      {
+        "id": "754c8ed2-a0b2-47c6-9eb6-abcc0448e707",
+        "title": "",
+        "owner": "Luisa Ramirez",
+        "due": "",
+        "done": false,
+        "result": "",
+        "description": "",
+        "nodeId": "",
+        "dependsOn": []
       }
     ],
     "dailyNotes": [
