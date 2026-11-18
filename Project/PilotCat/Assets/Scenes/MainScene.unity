@@ -287,6 +287,7 @@ MonoBehaviour:
   shootVolume: 0.228
   pickupSound: {fileID: 8300000, guid: 652b1905e593d7c46bc8606cf226ab99, type: 3}
   pickupVolume: 2.5
+  shieldVisual: {fileID: 0}
 --- !u!82 &13482371
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1671,7 +1672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30f3cd6dcade2540b8d47da2eab4805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  prefab: {fileID: 8445056022737733608, guid: ff86d3b9bde242e49818508f02660aaa, type: 3}
+  prefab: {fileID: 8445056022737733608, guid: 1f1ca6ddbfc91294b9a4f5058e9fcd1b, type: 3}
   interval: 1.5
   spawnX: 12
   minY: -5
@@ -2389,6 +2390,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScoreKeeper
   scoreText: {fileID: 1283962680}
   goal: 50
+  fishCapacity: 3
+  cargoPanel: {fileID: 0}
+  messageText: {fileID: 0}
+  messageTime: 1.5
   beaconPrefab: {fileID: 1254587206490196999, guid: a013936f3d2d3e346a81e85176e76bec, type: 3}
   winMessage: {fileID: 330253957}
   loseSound: {fileID: 8300000, guid: 0408fd933650b3a439278470a71ba388, type: 3}
