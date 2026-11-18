@@ -126,9 +126,9 @@
     "dailyDraft": {
       "meeting": "CS077-2026-11-18",
       "worked": "Character and Environment Sprite Board in conjunction with Kevin",
-      "next": "",
+      "next": "Double tapping sprite art update/progress with Kevin",
       "blocker": "",
-      "evidence": ""
+      "evidence": "CS077-Gaterollers_Das-Finale/Evidence/Screenshots/CS077_WB_FINALE_SESSION_2.jpg"
     },
     "requirements": [
       {
@@ -282,6 +282,22 @@
         "blocker": "",
         "evidence": "CS077-Gaterollers_Das-Finale/development-road/final/cs077/boards/IMG_20261116_124917_957.webp",
         "tasks": []
+      },
+      {
+        "date": "2026-11-18",
+        "revision": 1,
+        "worked": "Character and Environment Sprite Board in conjunction with Kevin",
+        "next": "Double tapping sprite art update/progress with Kevin",
+        "blocker": "",
+        "evidence": "CS077-Gaterollers_Das-Finale/Evidence/Screenshots/CS077_WB_FINALE_SESSION_2.jpg",
+        "tasks": [
+          {
+            "title": "Storyboard",
+            "due": "2026-11-18T23:59",
+            "done": false,
+            "result": ""
+          }
+        ]
       }
     ]
   },
