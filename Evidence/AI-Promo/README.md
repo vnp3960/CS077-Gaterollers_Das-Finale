@@ -1,0 +1,1 @@
+# Create a project-specific concept or promotional render. Save the tool name, prompt, selected output, your revisions and credits. Label concept artwork clearly; it is not evidence of working gameplay.
