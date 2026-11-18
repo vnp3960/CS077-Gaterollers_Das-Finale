@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using PilotCat.Core;
 
 public class PlayerMover : MonoBehaviour
 {
@@ -7,7 +7,7 @@ public class PlayerMover : MonoBehaviour
     public float verticalSpeed = 8.0f;
     public float minY = -4f;
     public float maxY = 4f;
-    public float horizontalSpeed = 8.0f;
+    public float horizontalSpeed = 7.0f;
     public float minX = -9f;
     public float maxX = 6f;
 
@@ -21,9 +21,18 @@ public class PlayerMover : MonoBehaviour
     public AudioClip pickupSound;
     [Range(0f, 3f)] public float pickupVolume = 2f;
 
+    [Header("Fish Shield")]
+    public GameObject shieldVisual;   // optional bubble shown while the shield is up
+    bool shieldUp;
+
+    void Start()
+    {
+        SetShield(false);
+    }
+
     void Update()
     {
-        // Game is frozen after winning
+        // Game is frozen after a win or game over
         if (Time.timeScale == 0f) return;
 
         // W/S or Up/Down = vertical, A/D or Left/Right = horizontal
@@ -45,33 +54,71 @@ public class PlayerMover : MonoBehaviour
             Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
             if (pickupAudio != null && shootSound != null) pickupAudio.PlayOneShot(shootSound, shootVolume);
         }
+
+        // E eats a Fish Snack for a one-hit shield
+        if (Input.GetKeyDown(KeyCode.E)) EatFish();
+    }
+
+    void EatFish()
+    {
+        if (shieldUp) { Say("Shield already up!"); return; }
+        if (!ScoreKeeper.cargo.TryRemove(ItemType.FishSnack)) { Say("No fish!"); return; }
+        SetShield(true);
+        Say("Shield up!");
+    }
+
+    void SetShield(bool on)
+    {
+        shieldUp = on;
+        if (shieldVisual != null) shieldVisual.SetActive(on);
+    }
+
+    void Say(string msg)
+    {
+        if (ScoreKeeper.instance != null) ScoreKeeper.instance.ShowMessage(msg);
+    }
+
+    void PlayPickup()
+    {
+        if (pickupAudio == null || pickupSound == null) return;
+        // Stack copies to go louder than 1
+        float v = pickupVolume;
+        while (v > 0f)
+        {
+            pickupAudio.PlayOneShot(pickupSound, Mathf.Min(v, 1f));
+            v -= 1f;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CatNip"))
         {
-            if (pickupAudio != null && pickupSound != null)
-            {
-                // Stack copies to go louder than 1
-                float v = pickupVolume;
-                while (v > 0f)
-                {
-                    pickupAudio.PlayOneShot(pickupSound, Mathf.Min(v, 1f));
-                    v -= 1f;
-                }
-            }
-            ScoreKeeper.catNip++;
+            // Hold full: the bag is left behind and scrolls away
+            if (!ScoreKeeper.cargo.TryAdd(ItemType.CatNip)) { Say("Hold full! Head for the beacon"); return; }
+            PlayPickup();
+            Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("FishSnack"))
+        {
+            if (!ScoreKeeper.cargo.TryAdd(ItemType.FishSnack)) { Say("Fish hold full!"); return; }
+            PlayPickup();
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("Hazard"))
         {
-            // Crash: restart the level
+            // The shield absorbs one hit
+            if (shieldUp)
+            {
+                SetShield(false);
+                Destroy(other.gameObject);
+                Say("Shield broke!");
+                return;
+            }
             if (ScoreKeeper.instance != null) ScoreKeeper.instance.Lose();
         }
         else if (other.CompareTag("Beacon"))
         {
-            // Reached the extraction beacon: win
             if (ScoreKeeper.instance != null) ScoreKeeper.instance.Win();
         }
     }
