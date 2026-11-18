@@ -1673,7 +1673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   prefab: {fileID: 8445056022737733608, guid: 1f1ca6ddbfc91294b9a4f5058e9fcd1b, type: 3}
-  interval: 1.5
+  interval: 8
   spawnX: 12
   minY: -5
   maxY: 5
