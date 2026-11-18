@@ -69,7 +69,7 @@ Trigger	Duke's legendary flight instructor.
 👥 3. Gateroller Team & Individual Contributions
 
 The Gateroller team collaboratively developed Pilot Cat through brainstorming, game design, Unity development, documentation, and testing.
-
+	
 Team Roster
 Team Member				Position	Individual Contributions
 Vinh Khang Nguyen Pham	Team Lead	Directed the project, coordinated technical development, and contributed to Unity gameplay implementation and integration.
