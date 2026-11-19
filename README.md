@@ -59,17 +59,17 @@
 
 | # | Requirement | Pts | Owner | Status |
 | :---: | :--- | :---: | :--- | :--- |
-| **1** | **Working Project Foundation** | 150 | `Unassigned` | `Pending` |
-| **2** | **Save and Restore Progress** | 50 | `Unassigned` | `Pending` |
-| **3** | **Settings That Persist** | 50 | `Unassigned` | `Pending` |
-| **4** | **Branching Story or Mission State** | 75 | `Unassigned` | `Pending` |
-| **5** | **Inventory or Structured Collection** | 75 | `Unassigned` | `Pending` |
-| **6** | **Public Release on Approved Platform** | 100 | `Unassigned` | `Pending` |
-| **7** | **Front-Facing HTML Product Page** | 75 | `Unassigned` | `Pending` |
-| **8** | **Project T-Shirt Design + Mockup** | 3 | `Unassigned` | `Pending` |
-| **9** | **Illustrated Player Quick Start** | 3 | `Unassigned` | `Pending` |
-| **10** | **External Playtest and Revision** | 75 | `Unassigned` | `Pending` |
-| **11** | **Automated Regression Tests** | 75 | `Unassigned` | `Pending` |
+| **1** | **Working Project Foundation** | 150 | `Roman` | `Pending` |
+| **2** | **Save and Restore Progress** | 50 | `Roman` | `Pending` |
+| **3** | **Settings That Persist** | 50 | `Roman` | `Pending` |
+| **4** | **Branching Story or Mission State** | 75 | `Vinh` | `Pending` |
+| **5** | **Inventory or Structured Collection** | 75 | `Roman` | `Pending` |
+| **6** | **Public Release on Approved Platform** | 100 | `Pascual` | `Pending` |
+| **7** | **Front-Facing HTML Product Page** | 75 | `Luisa` | `Pending` |
+| **8** | **Project T-Shirt Design + Mockup** | 3 | `Kevin` | `Pending` |
+| **9** | **Illustrated Player Quick Start** | 3 | `Kevin` | `Pending` |
+| **10** | **External Playtest and Revision** | 75 | `Dweller` | `Pending` |
+| **11** | **Automated Regression Tests** | 75 | `Roman` | `Pending` |
 
 <details>
 <summary><strong>📂 View Detailed Deliverable Criteria (Click to Expand)</strong></summary>
