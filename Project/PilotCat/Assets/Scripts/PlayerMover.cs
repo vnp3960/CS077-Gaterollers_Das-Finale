@@ -7,7 +7,7 @@ public class PlayerMover : MonoBehaviour
     public float verticalSpeed = 8.0f;
     public float minY = -4f;
     public float maxY = 4f;
-    public float horizontalSpeed = 7.0f;
+    public float horizontalSpeed = 8.0f;
     public float minX = -9f;
     public float maxX = 6f;
 
@@ -25,14 +25,25 @@ public class PlayerMover : MonoBehaviour
     public GameObject shieldVisual;   // optional bubble shown while the shield is up
     bool shieldUp;
 
+    [Header("Debug")]
+    public bool invulnerable = false;   // tick to fly through Watch Dogs while testing
+    public int startingCatNip = 0;      // Cat Nip already in the hold at takeoff (Editor only)
+
     void Start()
     {
         SetShield(false);
+
+        // Debug: start with Cat Nip already in the hold (only works in the Editor)
+        if (Application.isEditor && startingCatNip > 0)
+        {
+            int amount = Mathf.Min(startingCatNip, ScoreKeeper.cargo.Capacity(ItemType.CatNip));
+            ScoreKeeper.cargo.TryAdd(ItemType.CatNip, amount);
+        }
     }
 
     void Update()
     {
-        // Game is frozen after a win or game over
+        // Game is frozen during the briefing and after an ending
         if (Time.timeScale == 0f) return;
 
         // W/S or Up/Down = vertical, A/D or Left/Right = horizontal
@@ -55,7 +66,7 @@ public class PlayerMover : MonoBehaviour
             if (pickupAudio != null && shootSound != null) pickupAudio.PlayOneShot(shootSound, shootVolume);
         }
 
-        // E eats a Fish Snack for a one-hit shield
+        // E eats a full fish hold for a one-hit shield
         if (Input.GetKeyDown(KeyCode.E)) EatFish();
     }
 
@@ -116,6 +127,9 @@ public class PlayerMover : MonoBehaviour
         }
         else if (other.CompareTag("Hazard"))
         {
+            // Debug: Watch Dogs can't hurt you (only works in the Editor)
+            if (invulnerable && Application.isEditor) return;
+
             // The shield absorbs one hit
             if (shieldUp)
             {
@@ -124,11 +138,16 @@ public class PlayerMover : MonoBehaviour
                 Say("Shield broke!");
                 return;
             }
+
             if (ScoreKeeper.instance != null) ScoreKeeper.instance.Lose();
         }
-        else if (other.CompareTag("Beacon"))
+        else if (other.CompareTag("BeaconMarket"))
         {
-            if (ScoreKeeper.instance != null) ScoreKeeper.instance.Win();
+            if (ScoreKeeper.instance != null) ScoreKeeper.instance.Deliver(MissionState.MarketDelivery);
+        }
+        else if (other.CompareTag("BeaconOrphanage"))
+        {
+            if (ScoreKeeper.instance != null) ScoreKeeper.instance.Deliver(MissionState.OrphanageDrop);
         }
     }
 }

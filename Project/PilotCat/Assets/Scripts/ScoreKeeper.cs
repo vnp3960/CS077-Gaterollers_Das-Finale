@@ -14,48 +14,91 @@ public class ScoreKeeper : MonoBehaviour
     public static int catNip => cargo.Count(ItemType.CatNip);
 
     public static int kills;
+
+    // Where the mission is: Briefing, Flying, ExtractionReady or an ending
+    public static MissionMachine mission = new MissionMachine();
+
     public TMP_Text scoreText;
 
     [Header("Cargo")]
-    public int goal = 50;          // Cat Nip hold size; a full hold calls the beacon
+    public int goal = 50;          // Cat Nip hold size; a full hold calls the beacons
     public int fishCapacity = 3;
     public TMP_Text cargoPanel;    // shown while Tab is held
     public TMP_Text messageText;   // short pop-ups like "Hold full!"
     public float messageTime = 1.5f;
     float messageTimer;
 
-    [Header("Winning")]
-    public GameObject beaconPrefab;
+    [Header("Briefing")]
+    public GameObject briefingPanel;
+    [TextArea(3, 8)]
+    public string briefingText =
+        "Duke, the Watch Dogs are patrolling the Catlantic tonight.\nFill your hold with 50 bags of Cat Nip, then choose your drop.";
+
+    [Header("Extraction")]
+    public GameObject marketBeaconPrefab;     // gold, high
+    public GameObject orphanageBeaconPrefab;  // green, low
+    public float beaconX = 12f;
+    public float marketBeaconY = 3f;
+    public float orphanageBeaconY = -3f;
+    GameObject marketBeacon;
+    GameObject orphanageBeacon;
+
+    [Header("Endings")]
     public GameObject winMessage;
+    [TextArea(2, 6)]
+    public string marketEndingText =
+        "Delivery Complete!\nThe Catmerica market paid double.";
+    [TextArea(2, 6)]
+    public string orphanageEndingText =
+        "Special Delivery!\nThe orphanages of Settaria eat well tonight.";
 
     [Header("End Sounds")]
     public AudioClip loseSound;
     [Range(0f, 1f)] public float loseVolume = 0.8f;
     public AudioSource music;
 
-    bool beaconSent;
-
     void Awake()
     {
         instance = this;
         cargo = new CargoHold(goal, fishCapacity); // fresh, empty hold every load
+        mission = new MissionMachine();            // every load starts at Briefing
     }
 
     void Start()
     {
         kills = 0;
-        Time.timeScale = 1f;
         if (winMessage != null) winMessage.SetActive(false);
         if (cargoPanel != null) cargoPanel.gameObject.SetActive(false);
         if (messageText != null) messageText.gameObject.SetActive(false);
+        ShowBriefing();
+    }
+
+    void ShowBriefing()
+    {
+        Time.timeScale = 0f; // the world waits until takeoff
+        if (briefingPanel == null) return;
+        briefingPanel.SetActive(true);
+        TMP_Text t = briefingPanel.GetComponentInChildren<TMP_Text>();
+        if (t != null) t.text = briefingText + "\n\nPress Space to take off";
     }
 
     void Update()
     {
+        // Briefing: Space takes off
+        if (mission.State == MissionState.Briefing)
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && mission.TryChange(MissionState.Flying))
+            {
+                if (briefingPanel != null) briefingPanel.SetActive(false);
+                Time.timeScale = 1f;
+            }
+            return;
+        }
+
         if (scoreText != null)
         {
             scoreText.text = catNip + " / " + goal
-                + "   Fish: " + cargo.Count(ItemType.FishSnack)
+                + "   Fish: " + cargo.Count(ItemType.FishSnack) + " / " + cargo.Capacity(ItemType.FishSnack)
                 + "   Kills: " + kills;
         }
 
@@ -79,18 +122,29 @@ public class ScoreKeeper : MonoBehaviour
             if (messageTimer <= 0f) messageText.gameObject.SetActive(false);
         }
 
-        // Hold full: send in the extraction beacon
-        if (!beaconSent && catNip >= goal && beaconPrefab != null)
+        // Full hold: Flying -> ExtractionReady
+        mission.CheckHold(catNip, goal);
+
+        // Extraction: send both beacons (and again if both were missed)
+        if (mission.State == MissionState.ExtractionReady && marketBeacon == null && orphanageBeacon == null)
         {
-            beaconSent = true;
-            Instantiate(beaconPrefab, new Vector3(12f, 0f, 0f), Quaternion.identity);
+            SendBeacons();
         }
 
-        // After the game ends, R restarts
-        if (Time.timeScale == 0f && Input.GetKeyDown(KeyCode.R))
+        // After an ending, R restarts
+        if (mission.IsOver && Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+
+    void SendBeacons()
+    {
+        if (marketBeaconPrefab != null)
+            marketBeacon = Instantiate(marketBeaconPrefab, new Vector3(beaconX, marketBeaconY, 0f), Quaternion.identity);
+        if (orphanageBeaconPrefab != null)
+            orphanageBeacon = Instantiate(orphanageBeaconPrefab, new Vector3(beaconX, orphanageBeaconY, 0f), Quaternion.identity);
+        ShowMessage("Gold = Catmerica Market   Green = Settaria Orphanage");
     }
 
     public void ShowMessage(string msg)
@@ -101,15 +155,17 @@ public class ScoreKeeper : MonoBehaviour
         messageTimer = messageTime;
     }
 
-    public void Win()
+    // Called by PlayerMover when Duke touches a beacon
+    public void Deliver(MissionState ending)
     {
-        ShowEnd("Delivery Complete!");
+        if (!mission.TryChange(ending)) return; // refused, e.g. already shot down
+        ShowEnd(ending == MissionState.MarketDelivery ? marketEndingText : orphanageEndingText);
     }
 
     public void Lose()
     {
-        // Only once, even if two hazards hit at the same moment
-        if (Time.timeScale == 0f) return;
+        // Only once, and never after a delivery
+        if (!mission.TryChange(MissionState.ShotDown)) return;
 
         if (music != null) music.Stop();
 
@@ -123,7 +179,8 @@ public class ScoreKeeper : MonoBehaviour
 
     void ShowEnd(string title)
     {
-        int finalScore = catNip * kills;
+        int finalScore = MissionMachine.FinalScore(mission.State, catNip, kills);
+        string doubled = mission.State == MissionState.MarketDelivery ? " x 2" : "";
 
         if (winMessage != null)
         {
@@ -131,7 +188,7 @@ public class ScoreKeeper : MonoBehaviour
             if (endText != null)
             {
                 endText.text = title + "\n"
-                    + "Cat Nip " + catNip + " x Kills " + kills + "\n"
+                    + "Cat Nip " + catNip + " x Kills " + kills + doubled + "\n"
                     + "Score: " + finalScore + "\n"
                     + "Press R to play again";
             }

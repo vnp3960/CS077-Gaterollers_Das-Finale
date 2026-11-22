@@ -8,6 +8,8 @@ TagManager:
   - Hazard
   - Beacon
   - FishSnack
+  - BeaconMarket
+  - BeaconOrphanage
   layers:
   - Default
   - TransparentFX
